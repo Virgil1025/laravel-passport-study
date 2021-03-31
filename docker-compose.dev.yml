@@ -1,0 +1,20 @@
+version: '3'
+
+networks:
+  network:
+    external: 
+      name: dev
+
+services:
+  app:
+    container_name: laravel-passport
+    image: laravel:php7.3
+    working_dir: /myapp/passport
+    volumes: 
+      - C:\Users\v.ho\dockercode\laravel-passport:/myapp
+      - /myapp/passport/vendor
+    # command: touch log && tail -f log
+    ports:
+      - 40:8000
+    networks: 
+      - network
